@@ -4,9 +4,6 @@
   "displayName": "Editor Tooling",
   "description": "This package adds implements several classes to improve editor scripting.",
   "unity": "2022.3",
-  "dependencies": {
-    "com.bouncypantaloons.extension-functions": "1.0.0"
- },
  "keywords": [
     "editor",
     "scripting"
