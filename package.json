@@ -5,7 +5,7 @@
   "description": "This package adds implements several classes to improve editor scripting.",
   "unity": "2022.3",
   "dependencies": {
-    "com.bouncypantaloons.extension-functions": "0.1.0"
+    "com.bouncypantaloons.extension-functions": "https://github.com/BouncyPantaloons/Extension-Functions.git"
  },
  "keywords": [
     "editor",
