@@ -1,0 +1,17 @@
+{
+    "name": "bouncypantaloons.editor-tooling.editor",
+    "rootNamespace": "Tooling.Editor",
+    "references": [
+        "GUID:c572e7c09244a9f4eb4420b6edfc8711",
+        "GUID:6cc4cda474ad56f479ece03c46f6adb3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

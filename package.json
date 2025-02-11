@@ -1,0 +1,15 @@
+{
+  "name": "com.bouncypantaloons.editor-tooling",
+  "version": "0.1.0",
+  "displayName": "Editor Tooling",
+  "description": "This package adds implements several classes to improve editor scripting.",
+  "unity": "2022.3",
+  "unityRelease": "47f1",
+ "keywords": [
+    "editor",
+    "scripting"
+  ],
+  "author": {
+    "name": "BouncyPantaloons"
+  }
+}
