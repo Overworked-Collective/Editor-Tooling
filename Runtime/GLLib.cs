@@ -13,7 +13,7 @@ namespace Tooling.Editor
                 GL.MultMatrix(Matrix4x4.TRS(new Vector3(rect.x, rect.y < 0 ? 0 : rect.y, 0), Quaternion.identity, Vector3.one));
                 GL.PushMatrix();
 
-                GL.Clear(true, false, Color.black);
+                //GL.Clear(true, false, Color.black);
 
                 mat.SetPass(0);
 
