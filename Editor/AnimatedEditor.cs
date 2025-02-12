@@ -20,7 +20,7 @@ namespace Tooling.Editor
         public static void DrawAnimatedQuad(Rect rect, bool value, Material material, string materialProperty, float animationSpeed = 0.5f)
         {
             float animatedValue = material.GetFloat(materialProperty);
-            material.SetFloat(materialProperty, Mathf.Lerp(animatedValue, value.ToInt(), animationSpeed * (Time.deltaTime < 1f ? Time.deltaTime : 0)));
+            material.SetFloat(materialProperty, Mathf.Lerp(animatedValue, value.ToInt(), animationSpeed * (Time.deltaTime < 0.1f ? Time.deltaTime : 0)));
 
             GLLib.DrawQuad(rect, material, new Rect(0, 0, rect.width, rect.height));
 
