@@ -1,6 +1,6 @@
 {
   "name": "com.bouncypantaloons.editor-tooling",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "displayName": "Editor Tooling",
   "description": "This package adds implements several classes to improve editor scripting.",
   "unity": "2022.3",
