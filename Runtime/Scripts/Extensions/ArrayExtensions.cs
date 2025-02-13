@@ -12,16 +12,21 @@ namespace Tooling.Extensions
 
         public static string ToCSV<T>(this T[] array)
         {
-            string csvString = "";
+            return array.Fuse(',');
+        }
+
+        public static string Fuse<T>(this T[] array, char seperator)
+        {
+            string returnString = "";
             foreach (var item in array)
             {
-                csvString += item.ToString();
+                returnString += item.ToString();
                 if (!array.Last().Equals(item))
                 {
-                    csvString += ", ";
+                    returnString += seperator;
                 }
             }
-            return csvString;
+            return returnString;
         }
     }
 }
