@@ -3,9 +3,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using static PlasticPipe.Client.InvokeMethodRetry;
+using Tooling.Reflection;
 
 namespace Tooling.Extensions
 {
@@ -47,6 +49,25 @@ namespace Tooling.Extensions
             string[] selectedPath = splitPath.Where(s => !s.Contains(property.name)).ToArray();
             return selectedPath.Fuse('.');
         }
+
+/*        public static T GetAttribute<T>(this SerializedProperty property) where T : Attribute
+        {
+            FieldInfo fieldInfo = property.GetFieldInfo();
+            Debug.Log(fieldInfo.Name);
+
+            object[] attributes = fieldInfo.GetCustomAttributes(false).Where(a => a.GetType() == typeof(T)).ToArray();
+            if (attributes.Length > 0)
+            {
+                return attributes[0] as T;
+            }
+
+            return null;
+        }*/
+
+/*        public static FieldInfo GetFieldInfo(this SerializedProperty property)
+        {
+            return ReflectionUtility.GetField(property.serializedObject.targetObject, property);
+        }*/
 
         public static int GetElementIndex(this SerializedProperty property)
         {

@@ -29,6 +29,39 @@ namespace Tooling.Reflection
             }
         }
 
+        public static IEnumerable<FieldInfo> GetAllFields(object target, Func<FieldInfo, bool> predicate)
+        {
+            if (target == null)
+            {
+                Debug.LogError("Target was null. Could not use null to get methods");
+                yield break;
+            }
+
+            List<Type> types = GetAllTypes(target);
+
+            for (int i = 0; i < types.Count; i++)
+            {
+                IEnumerable<FieldInfo> fieldInfos = types[i].GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly).Where(predicate);
+
+                foreach (var methodInfo in fieldInfos)
+                {
+                    yield return methodInfo;
+                }
+            }
+        }
+
+/*        public static FieldInfo GetField(object target, string field)
+        {
+            if (target == null)
+            {
+                Debug.LogError("Target was null. Could not use null to get methods");
+                return null;
+            }
+
+            FieldInfo fieldInfo = target.GetType().GetField(field, BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly);
+            return fieldInfo;
+        }*/
+
         private static List<Type> GetAllTypes(object target)
         {
             List<Type> types = new List<Type>();
