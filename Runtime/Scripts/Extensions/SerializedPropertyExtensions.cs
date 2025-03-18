@@ -46,7 +46,13 @@ namespace Tooling.Extensions
         public static string GetContainerPath(this SerializedProperty property)
         {
             string[] splitPath = property.propertyPath.Split('.');
-            string[] selectedPath = splitPath.Where(s => !s.Contains(property.name)).ToArray();
+            string[] selectedPath = splitPath.Where(s => !s.Equals(property.name)).ToArray();
+            
+/*            if (selectedPath.Where(s => s.Contains("[")).ToArray().Length > 0 )
+            {
+                return "";
+            }*/
+            
             return selectedPath.Fuse('.');
         }
 
